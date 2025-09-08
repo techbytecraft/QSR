@@ -1,7 +1,7 @@
 import React, { useState, useMemo, ChangeEvent, FormEvent } from 'react';
 import { Dish, InventoryItem, Ingredient } from '../../types';
 import { BanknotesIcon, ChevronDownIcon, DocumentArrowUpIcon, PlusIcon, TrashIcon } from '../Icons';
-import { parseInvoiceForIngredients } from '../../services/geminiService';
+// import { parseInvoiceForIngredients } from '../../services/geminiService';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // Helper to convert file to base64
@@ -91,7 +91,8 @@ const AddIngredientForm: React.FC<{
 };
 
 
-// Invoice Parser Component (inside CostingView)
+// Invoice Parser Component (HIDDEN - Commented out to prevent issues)
+/*
 const InvoiceParser: React.FC<{
     addMultipleInventoryItems: (items: Omit<InventoryItem, 'id' | 'status'>[]) => void;
 }> = ({ addMultipleInventoryItems }) => {
@@ -186,6 +187,7 @@ const InvoiceParser: React.FC<{
         </div>
     );
 };
+*/
 
 const COLORS = ['#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6', '#6B7280'];
 
@@ -298,7 +300,8 @@ const CostingView: React.FC<CostingViewProps> = ({ dishes, inventory, updateDish
 
     return (
         <main className="flex-1 p-6 lg:p-8 overflow-y-auto">
-            <InvoiceParser addMultipleInventoryItems={addMultipleInventoryItems} />
+            {/* Invoice Parser functionality hidden to prevent issues */}
+            {/* <InvoiceParser addMultipleInventoryItems={addMultipleInventoryItems} /> */}
             
             <div className="bg-white p-6 rounded-2xl shadow-md">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
